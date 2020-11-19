@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Chapter1">
+        <item>1FirstText</item>
+        <item>1SecondText</item>
+        <item>1ThirdText</item>
+        <item>1FourthText</item>
+    </string-array>
+    <string-array name="Chapter2">
+        <item>2FirstText</item>
+        <item>2SecondText</item>
+        <item>2ThirdText</item>
+        <item>2FourthText</item>
+    </string-array>
+    <string-array name="Chapter3">
+        <item>3FirstText</item>
+        <item>3SecondText</item>
+        <item>3ThirdText</item>
+        <item>3FourthText</item>
+    </string-array>
+</resources>
