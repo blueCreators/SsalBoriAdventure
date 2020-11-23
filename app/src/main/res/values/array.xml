@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Chapter1">
-        <item>1FirstText</item>
-        <item>1SecondText</item>
-        <item>1ThirdText</item>
+        <item>쌀보리 구출 대작전은 자동저장 시스템입니다 \n챕터 플레이 중간에 종료하면 해당 챕터 데이터가 사라지니 주의해 주세요~! </item>
+        <item>누군가:1FirstText</item>
+        <item>누군가:1SecondText</item>
+        <item>나:1ThirdText</item>
         <item>1FourthText</item>
+        <item>1다섯</item>
+        <item>1여섯</item>
+        <item>1일곱</item>
+        <item>1여덟</item>
     </string-array>
     <string-array name="Chapter2">
         <item>2FirstText</item>
@@ -17,5 +22,11 @@
         <item>3SecondText</item>
         <item>3ThirdText</item>
         <item>3FourthText</item>
+    </string-array>
+    
+    <string-array name="ChapterNumber">
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+        <item>Chapter 3</item>
     </string-array>
 </resources>

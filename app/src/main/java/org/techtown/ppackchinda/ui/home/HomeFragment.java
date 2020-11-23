@@ -58,6 +58,7 @@ public class HomeFragment extends Fragment {
                     chapter++;
                     page=0;
                     //미니게임이나 완전 끝 만나면 일어날 거 if로 쓰기
+                    //자동저장 부분 토스트 화면?
                 }
                 else{
                     page++;
@@ -74,6 +75,15 @@ public class HomeFragment extends Fragment {
             scripts=getResources().getStringArray(chapId[selChap]);
             chapter=selChap;
         }
-        txtScript.setText(scripts[selPage]);
+        if(scripts[selPage].contains(":"))
+        {
+            String[] temp=scripts[selPage].split(":");
+            txtNPC.setText(temp[0]);
+            txtScript.setText(temp[1]);
+        }
+        else{
+            txtNPC.setText(" ");
+            txtScript.setText(scripts[selPage]);
+        }
     }
 }
