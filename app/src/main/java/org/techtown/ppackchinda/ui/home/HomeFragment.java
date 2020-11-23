@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import org.techtown.ppackchinda.GameMainActivity;
 import org.techtown.ppackchinda.R;
 
 public class HomeFragment extends Fragment {
@@ -33,9 +35,13 @@ public class HomeFragment extends Fragment {
         txtScript=(TextView)root.findViewById(R.id.txtScript);
 
         //저장된 챕터 불러오기 추가해야함
-        int loadChap=0;//get chapter num 수정해야함
-        showScript(loadChap,0);
-        scripts=root.getResources().getStringArray(R.array.Chapter1);
+        //int loadChap=0;//get chapter num 수정해야함
+        //showScript(loadChap,0);
+        chapter=GameMainActivity.getChap();
+        page=GameMainActivity.getPage();
+        scripts=root.getResources().getStringArray(chapId[chapter]);
+        showScript(chapter,page);
+
 
         btnLastScr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +76,7 @@ public class HomeFragment extends Fragment {
     }
     public void showScript(int selChap,int selPage)
     {
+        GameMainActivity.setChapPage(selChap,page);
         if(selChap==chapter)
         {
             scripts=getResources().getStringArray(chapId[selChap]);

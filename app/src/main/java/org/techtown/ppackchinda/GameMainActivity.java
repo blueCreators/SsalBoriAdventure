@@ -17,7 +17,8 @@ import androidx.appcompat.widget.Toolbar;
 public class GameMainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    static int chapter;
+    static int page=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,8 @@ public class GameMainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        chapter=0;//db에서 챕터 받아오기
     }
 
     @Override
@@ -49,5 +52,19 @@ public class GameMainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    static public int getChap()
+    {
+        return chapter;
+    }
+    static public int getPage()
+    {
+        return page;
+    }
+    static public void setChapPage(int a,int b)
+    {
+        chapter=a;
+        page=b;
     }
 }

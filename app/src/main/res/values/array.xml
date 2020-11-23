@@ -1,27 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Chapter1">
-        <item>쌀보리 구출 대작전은 자동저장 시스템입니다 \n챕터 플레이 중간에 종료하면 해당 챕터 데이터가 사라지니 주의해 주세요~! </item>
-        <item>누군가:1FirstText</item>
-        <item>누군가:1SecondText</item>
-        <item>나:1ThirdText</item>
-        <item>1FourthText</item>
-        <item>1다섯</item>
-        <item>1여섯</item>
-        <item>1일곱</item>
-        <item>1여덟</item>
+        <item>쌀보리 구출 대작전은 자동저장 시스템입니다 \n챕터 플레이 중간에 종료하면 해당 챕터 데이터가 사라지니 주의해 주세요</item>
+        <item>챕터 1 시작</item>
+        <item>나는 셜록처럼 사립 탐정이 되고싶은 영대인!</item>
+        <item>대학 내 커뮤니티 "'"에브리타임"'"에 과학도서관 고양이 쌀이,보리가 사라졌다는 글이 올라왔다</item>
+        <item>나:흠...큰일이군 내가 이 사건을 맡아야겠어</item>
+        <item>단서가 너무 없다 수많은 영대생들 중 한 명은 고양이를 목격하지 않았을까?</item>
+        <item>에브리타임에 고양이를 찾는다는 글을 전화번호와 함께 올렸다</item>
+        <item>얼마 지나지 않아 누군가 댓글을 썼다</item>
+        <item>"'"이도냥이들 누가 들고가는 거 봤어요!"'"</item>
+        <item>새로운 단서다! 이 글의 작성자에게 쪽지를 보내 만나봐야겠다</item>
+        <item>검은 옷을 입은 제보자 김테스를 만났다</item>
+        <item>김테스:누군가 고양이들을 데리고 도망가는 걸 봤어요</item>
+        <item>김테스:범인은 파란 후드티를 입고 있었어요</item>
+        <item>김테스:머리는 어깨길이 정도로 길었어요</item>
+        <item>김테스:고양이 너무 좋아하는데 못키워서 이도냥이 자주 구경했거든요 혹시 무슨 일 있으면 도와드릴께요</item>
+        <item>정말 친절한 사람이다 이걸로 인상착의는 대충 알게되었군</item>
+        <item>나:정말 감사합니다</item>
+        <item>하지만 역시 고양이들을 데려갈만한 사람이라면 애견클럽이 아닐까?</item>
+        <item>중앙동아리 애견클럽에서는 교내 유기묘를 돕는 봉사활동을 하곤 한다 아마 추운 날씨에 임시보호 중일지도 모른다</item>
+        <item>중앙동아리들이 모여있는 노천강당 건물까지 걸어가보자</item>
     </string-array>
     <string-array name="Chapter2">
-        <item>2FirstText</item>
-        <item>2SecondText</item>
-        <item>2ThirdText</item>
-        <item>2FourthText</item>
+        <item>챕터 2 시작</item>
+        <item>노천강당에 도착했다</item>
+        <item>똑똑 애견클럽의 문을 두드렸다</item>
+        <item>애견클럽 동아리원:누구세요?</item>
+        <item>나:아 이도 앞 고양이들이 실종됐다고 해서 찾는 중입니다 혹시 이 동아리에서 임시보호 중이신가요?</item>
+        <item>애견클럽 동아리원:네에?!?! 정말요? 저희는 모르는 일이예요 고양이들이 어디로 사라졌을까요?</item>
+        <item>애견클럽 동아리원은 정말 걱정되어 보인다 안심시켜주자</item>
+        <item>나:아 아니예요 목격자도 있고 제가 열심히 찾는 중이니 금방 행방을 알 수 있을 거예요</item>
+        <item>애견클럽 동아리원:네 그래도 찾으면 알려주시겠어요</item>
+        <item>나:알겠습니다 너무 걱정하지 마세요</item>
+        <item>애견클럽 동아리 사람들은 정말 동물을 사랑하는 것 같다 마음이 따듯해진다 열심히 찾아야지</item>
+        <item>띠링띠링~</item>
+        <item>모르는 번호로 전화가 왔다 제보인가?</item>
+        <item>박물관 직원:어떤 학생이 휴대폰 배터리가 나가 친구에게 연락을 대신 해달라고 해서 전화했어요</item>
+        <item>박물관 직원:친구가 무슨 물건을 두고 갔으니 박물관으로 와서 받아가세요</item>
+        <item>뭐지? 나는 친구가 없는데... 뭔가 수상하다 얼른 박물관으로 가보자</item>
     </string-array>
     <string-array name="Chapter3">
-        <item>3FirstText</item>
-        <item>3SecondText</item>
-        <item>3ThirdText</item>
-        <item>3FourthText</item>
+        <item>챕터 3 시작</item>
+        <item>박물관에 도착해 박물관 직원에게 찾아갔다</item>
+        <item>박물관 직원:아까 어떤 학생이 친구 전해줘야한다며 맡겨놓고 갔어요</item>
+        <item>천공카드를 얻었다!</item>
+        <item>천공카드는 예비 탐정이라면 모두들 아는 구멍이 뚫린 종이이다</item>
+        <item>힌트가 되는 글 위에 올려놓으면 비밀 암호를 알 수 있다</item>
+        <item>모르는 사람이 이런 걸 두고가다니! 무조건 나와 추리게임을 하려는 범인이다!</item>
+        <item>나:저 혹시 맡기고 간 학생 인상착의가 어땠나요?</item>
+        <item>박물관 직원:자세히 보지않아서 기억이... 아! 까만 후드티를 푹 눌러쓰고 있었어요 그래서 얼굴은 아예 모르겠네요</item>
+        <item>검은 후드티를 써서 얼굴을 가리다니 엄청나게 수상하다! 사건을 해결할 생각에 가슴이 두근두근한다</item>
+        <item>천공카드를 위에 올릴 글을 찾아야하는데...글이라면 역시 도서관 아니겠어?</item>
+        <item>도서관으로 가봐야겠다</item>
     </string-array>
     
     <string-array name="ChapterNumber">

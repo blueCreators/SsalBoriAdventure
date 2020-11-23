@@ -11,10 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import org.techtown.ppackchinda.GameMainActivity;
 import org.techtown.ppackchinda.R;
 
 public class ReReadFragment extends Fragment {
@@ -30,13 +32,29 @@ public class ReReadFragment extends Fragment {
 
         spinReadChap.setAdapter(chapAdapter);
 
+        int chapter= GameMainActivity.getChap();
+        int page=GameMainActivity.getPage();
+
         spinReadChap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(chapter<i)
+                {
+                    Toast.makeText(context,"아직 플레이하지 않은 챕터입니다",Toast.LENGTH_LONG).show();
+                    return;
+                }
                 String[] scripts=getResources().getStringArray(chapId[i]);
                 LinearLayout inScrllLinear=(LinearLayout) root.findViewById(R.id.inScrllLinear);
                 inScrllLinear.removeAllViews();
-                for(int x=0;x<scripts.length;x++)
+                int limit;
+                if(chapter==i)
+                {
+                    limit=page;
+                }
+                else {
+                    limit=scripts.length;
+                }
+                for(int x=0;x<limit;x++)
                 {
                     RelativeLayout ret=(RelativeLayout)View.inflate(context,R.layout.reread_script_msg,null);
                     TextView txtMsgScript=(TextView)ret.findViewById(R.id.txtMsgScript);
