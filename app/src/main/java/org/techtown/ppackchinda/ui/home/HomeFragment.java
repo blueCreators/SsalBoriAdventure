@@ -22,7 +22,8 @@ public class HomeFragment extends Fragment {
     Button btnLastScr,btnNextScr;
     TextView txtNPC,txtScript;
     String[] scripts;
-    int[] chapId={R.array.Chapter1,R.array.Chapter2,R.array.Chapter3};
+    int[] chapId={R.array.Chapter1,R.array.Chapter2,R.array.Chapter3,R.array.Chapter4,R.array.Chapter5,R.array.Chapter6,R.array.Chapter7,
+            R.array.Chapter8,R.array.Chapter9,R.array.Chapter10,R.array.Chapter11};
     int chapter=0;
     int page=0;
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -63,8 +64,14 @@ public class HomeFragment extends Fragment {
                 {
                     chapter++;
                     page=0;
-                    //미니게임이나 완전 끝 만나면 일어날 거 if로 쓰기
-                    //자동저장 부분 토스트 화면?
+                    //챕터 저장하기
+                    switch (chapter-1)
+                    {
+                        case 0:
+                            //위치 인식
+                        case 2:
+                            //미니게임
+                    }
                 }
                 else{
                     page++;
@@ -89,7 +96,7 @@ public class HomeFragment extends Fragment {
             txtScript.setText(temp[1]);
         }
         else{
-            txtNPC.setText(" ");
+            txtNPC.setText("");
             txtScript.setText(scripts[selPage]);
         }
     }

@@ -21,7 +21,8 @@ import org.techtown.ppackchinda.R;
 
 public class ReReadFragment extends Fragment {
     Spinner spinReadChap;
-    int[] chapId={R.array.Chapter1,R.array.Chapter2,R.array.Chapter3};
+    int[] chapId={R.array.Chapter1,R.array.Chapter2,R.array.Chapter3,R.array.Chapter4,R.array.Chapter5,R.array.Chapter6,R.array.Chapter7,
+            R.array.Chapter8,R.array.Chapter9,R.array.Chapter10,R.array.Chapter11};
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_reread, container, false);
