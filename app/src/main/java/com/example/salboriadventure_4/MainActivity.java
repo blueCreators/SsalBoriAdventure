@@ -13,7 +13,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView cat, building, bus, person, tree;
+    ImageView cat, building, bus, person, tree, refresh;
+    LinearLayout mainLayout;
     //ViewGroup view_root;
 
     private int xDelta;
@@ -24,11 +25,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //mainLayout = (LinearLayout)findViewById(R.id.mainLayout);
         cat = (ImageView)findViewById(R.id.cat);
         building = (ImageView)findViewById(R.id.building);
         bus = (ImageView)findViewById(R.id.bus);
         person = (ImageView)findViewById(R.id.person);
         tree = (ImageView)findViewById(R.id.tree);
+        refresh = (ImageView)findViewById(R.id.refresh);
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recreate();
+            }
+        });
 
         //view_root = (ViewGroup)findViewById(R.id.view_root);
 
