@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     CountDownTimer countDownTimer;
 
     private long timeLeftInMilliseconds = 300000; // 5분
-    private boolean timerRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +32,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 textView.setText("민속촌을 둘러보자!");
                 btnStart.setVisibility(View.INVISIBLE);
-                startStop();
+                startTimer();
             }
         });
-    }
-
-    public void startStop(){
-        if(timerRunning){
-            stopTimer();
-        }else{
-            startTimer();
-        }
     }
 
     public void startTimer(){
@@ -59,14 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }.start();
-
-        timerRunning = true;
     }
 
-    public void stopTimer(){
-        countDownTimer.cancel();
-        timerRunning = false;
-    }
 
     public void updateTimer(){
         int minutes = (int)timeLeftInMilliseconds / 60000;
