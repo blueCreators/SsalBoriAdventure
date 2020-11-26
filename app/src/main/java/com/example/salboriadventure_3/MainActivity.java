@@ -1,0 +1,37 @@
+package com.example.salboriadventure_3;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText answer;
+    Button btnComplete;
+    String correctAnswer = "고양이를 찾습니다";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        answer = (EditText)findViewById(R.id.answer);
+        btnComplete = (Button)findViewById(R.id.btnComplete);
+        btnComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userInput = answer.getText().toString();
+
+                if(userInput.equals(correctAnswer)){
+                    Toast.makeText(MainActivity.this, "정답입니다!", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "다시 한번 생각해보세요!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+}
