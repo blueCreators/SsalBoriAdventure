@@ -33,14 +33,12 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView image, card;
+    ImageView image;
     Button btn;
     final String TAG = getClass().getSimpleName();
     final static int TAKE_PICTURE = 1;
-    String correctAnswer = "C03";
+    String correctAnswer = "C01";
 
-    FrameLayout btnLayout;
-    LinearLayout imageLayout;
     TextView question;
     EditText answer;
     Button btnComplete;
@@ -51,11 +49,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         image = (ImageView) findViewById(R.id.image);
-        card = (ImageView) findViewById(R.id.card);
         btn = (Button) findViewById(R.id.btn);
-
-        btnLayout = (FrameLayout)findViewById(R.id.btnLayout);
-        imageLayout = (LinearLayout)findViewById(R.id.imageLayout);
 
         question = (TextView)findViewById(R.id.question);
         answer = (EditText)findViewById(R.id.answer);
@@ -109,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
                     Bitmap bitmap = (Bitmap)intent.getExtras().get("data");
 
                     if(bitmap != null){
-                        btnLayout.setVisibility(View.INVISIBLE);
-                        imageLayout.setVisibility(View.VISIBLE);
+                        btn.setVisibility(View.INVISIBLE);
+                        image.setVisibility(View.VISIBLE);
 
                         image.setImageBitmap(bitmap);
                         image.setImageResource(R.drawable.result);
