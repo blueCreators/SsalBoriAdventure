@@ -34,10 +34,7 @@ public class HomeFragment extends Fragment {
         btnNextScr=(Button)root.findViewById(R.id.btnNextScr);
         txtNPC=(TextView)root.findViewById(R.id.txtNPC);
         txtScript=(TextView)root.findViewById(R.id.txtScript);
-
-        //저장된 챕터 불러오기 추가해야함
-        //int loadChap=0;//get chapter num 수정해야함
-        //showScript(loadChap,0);
+        
         chapter=GameMainActivity.getChap();
         page=GameMainActivity.getPage();
         scripts=root.getResources().getStringArray(chapId[chapter]);
@@ -64,7 +61,7 @@ public class HomeFragment extends Fragment {
                 {
                     chapter++;
                     page=0;
-                    //챕터 저장하기
+                    //챕터 저장하고 다른 액티비티로 전달
                     switch (chapter-1)
                     {
                         case 0:
