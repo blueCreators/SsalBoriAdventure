@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 textView.setText("민속촌을 둘러보자!");
+                btnStart.setVisibility(View.INVISIBLE);
                 startStop();
             }
         });
@@ -59,13 +60,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }.start();
 
-        btnStart.setText("PAUSE");
         timerRunning = true;
     }
 
     public void stopTimer(){
         countDownTimer.cancel();
-        btnStart.setText("START");
         timerRunning = false;
     }
 
