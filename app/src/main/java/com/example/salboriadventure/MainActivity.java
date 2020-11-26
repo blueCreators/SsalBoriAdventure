@@ -6,8 +6,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView questionOrder, question;
     private Button btn1, btn2, btn3, btn4, btnComplete;
     private EditText editText;
-    private LinearLayout btnLayout, editTextLayout;
+    private LinearLayout editTextLayout, btnLayout;
     private String userInput; //사용자가 입력한 버튼의 문자열 저장
     private boolean isCorrected = false; //퀴즈 정답 오답 여부
     private int quizCnt = 0; //지금까지 푼 퀴즈 개수
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(listener);
         btn3.setOnClickListener(listener);
         btn4.setOnClickListener(listener);
+
+
     }
 
     public boolean isInputCorrect(String userInput){ //사용자 input이 정답인지 검사
@@ -91,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(isInputCorrect(userInput) == true){
                     Toast.makeText(MainActivity.this, "모두 정답쓰", Toast.LENGTH_SHORT).show();
+
                     //다음 스크립트로 넘어가게 한다
                     quizCnt++;
                     currentQuiz++;
