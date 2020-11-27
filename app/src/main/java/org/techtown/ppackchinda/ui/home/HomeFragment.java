@@ -2,6 +2,7 @@ package org.techtown.ppackchinda.ui.home;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +16,15 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.techtown.ppackchinda.GameMainActivity;
 import org.techtown.ppackchinda.R;
+import org.techtown.ppackchinda.SetUserData;
 
 public class HomeFragment extends Fragment {
     Button btnLastScr,btnNextScr;
@@ -26,6 +34,8 @@ public class HomeFragment extends Fragment {
             R.array.Chapter8,R.array.Chapter9,R.array.Chapter10,R.array.Chapter11};
     int chapter=0;
     int page=0;
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_home, container, false);
@@ -39,7 +49,6 @@ public class HomeFragment extends Fragment {
         page=GameMainActivity.getPage();
         scripts=root.getResources().getStringArray(chapId[chapter]);
         showScript(chapter,page);
-
 
         btnLastScr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +70,7 @@ public class HomeFragment extends Fragment {
                 {
                     chapter++;
                     page=0;
+
                     //챕터 저장하고 다른 액티비티로 전달
                     switch (chapter-1)
                     {
@@ -97,4 +107,6 @@ public class HomeFragment extends Fragment {
             txtScript.setText(scripts[selPage]);
         }
     }
+
+
 }
