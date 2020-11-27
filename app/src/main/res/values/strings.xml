@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RegisterLoginExample</string>
+    <string name="welcome">Welcome</string>
+    <string name="password">Password</string>
+    <string name="확인">확인</string>
+    <string name="todo">TODO</string>
+    <string name="e_mail">e-mail</string>
 </resources>

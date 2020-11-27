@@ -20,7 +20,7 @@ import java.net.ResponseCache;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText et_id, et_pass;
-    private Button btn_login, btn_register, btn_fnd;
+    private Button btn_login, btn_register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
         btn_login = findViewById(R.id.btn_login);
         btn_register = findViewById(R.id.btn_register);
-        btn_fnd = findViewById(R.id.btn_fnd);
+
 
         // 회원가입 버튼 클릭시 수행
         btn_register.setOnClickListener(new View.OnClickListener() {
@@ -81,15 +81,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-        btn_fnd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, FndActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
     }
 }
