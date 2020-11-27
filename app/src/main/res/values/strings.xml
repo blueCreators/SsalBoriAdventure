@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">설정</string>
+
+    <string name="menu_home">home</string>
+    <string name="menu_item">아이템창</string>
+    <string name="menu_initialization">초기화</string>
+    <string name="menu_hof">명예의 전당</string>
+    <string name="menu_option">설정</string>
+</resources>
