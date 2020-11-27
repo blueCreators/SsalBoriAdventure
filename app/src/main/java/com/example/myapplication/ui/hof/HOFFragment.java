@@ -38,8 +38,8 @@ public class HOFFragment extends ListFragment {
         ListViewAdapterhof adapter = new ListViewAdapterhof(itemList);
         l.setAdapter(adapter);
         //DB에서 가져와 아이템 추가
-        adapter.addhof(0,"김", String.valueOf(System.currentTimeMillis()));
-        adapter.addhof(0,"이",String.valueOf(System.currentTimeMillis()));
+        adapter.addhof(0,"김", System.currentTimeMillis());
+        adapter.addhof(0,"이",System.currentTimeMillis());
         if(adapter.getCount() == 0)
         {
             t.setVisibility(View.VISIBLE);
@@ -50,9 +50,9 @@ public class HOFFragment extends ListFragment {
             public int compare(ListViewItemhof item1, ListViewItemhof item2) {
                 int ret ;
 
-                if (Integer.parseInt(item1.getDesc() )< Integer.parseInt(item2.getDesc()))
+                if (item1.getDesc()< item2.getDesc())
                     ret = -1 ;
-                else if ((Integer.parseInt(item1.getDesc() ) == Integer.parseInt(item2.getDesc())))
+                else if (item1.getDesc() ==item1.getDesc())
                     ret = 0 ;
                 else
                     ret = 1 ;
@@ -67,7 +67,7 @@ public class HOFFragment extends ListFragment {
         Collections.sort(itemList, noAsc) ;
         for(int i=0;i<adapter.getCount();i++)
         {
-            adapter.listViewItemList.set(i+1, itemList.get(i));
+            adapter.listViewItemList.get(i).setNo(i+1);
         }
         adapter.notifyDataSetChanged() ;
         return v;
@@ -76,7 +76,7 @@ public class HOFFragment extends ListFragment {
     class ListViewItemhof{
         private int no;
         private String titleStr ;
-        private String descStr;
+        private long descStr;
         public void setTitle(String title) {
             titleStr = title ;
         }
@@ -86,14 +86,14 @@ public class HOFFragment extends ListFragment {
         public int getNo() {
             return no ;
         }
-        public void setDesc(String desc) {
+        public void setDesc(long desc) {
             descStr = desc ;
         }
 
         public String getTitle() {
             return this.titleStr ;
         }
-        public String getDesc() {
+        public long getDesc() {
             return this.descStr ;
         }
     }
@@ -138,7 +138,7 @@ public class HOFFragment extends ListFragment {
             // 아이템 내 각 위젯에 데이터 반영
             priorityView.setText(Integer.toString(listViewItem.getNo()));
             titleTextView.setText(listViewItem.getTitle());
-            descTextView.setText(listViewItem.getDesc());
+            descTextView.setText(Long.toString(listViewItem.getDesc()));
 
             return convertView;
         }
@@ -156,7 +156,7 @@ public class HOFFragment extends ListFragment {
         }
 
         // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-        public void addhof( int no,String title, String desc) {
+        public void addhof( int no,String title, long desc) {
             ListViewItemhof item = new ListViewItemhof();
             //만약 사용자 시간이 10등 시간보다 크면 아무것도 안함.
             //10등 이하일경우 1등부터 비교해가며 중간에 해당 순위 정보에 insert하여 갱신.
@@ -166,6 +166,7 @@ public class HOFFragment extends ListFragment {
 
             listViewItemList.add(item);
         }
+
 
         public ArrayList<ListViewItemhof> getItemList() {
             return listViewItemList ;
