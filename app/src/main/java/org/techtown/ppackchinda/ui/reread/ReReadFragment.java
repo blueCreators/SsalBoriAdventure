@@ -50,7 +50,7 @@ public class ReReadFragment extends Fragment {
                 int limit;
                 if(chapter==i)
                 {
-                    limit=page;
+                    limit=page+1;
                 }
                 else {
                     limit=scripts.length;
