@@ -25,6 +25,7 @@ import org.json.JSONObject;
 import org.techtown.ppackchinda.GameMainActivity;
 import org.techtown.ppackchinda.R;
 import org.techtown.ppackchinda.SetUserData;
+import org.techtown.ppackchinda.UpdateUserData;
 
 public class HomeFragment extends Fragment {
     Button btnLastScr,btnNextScr;
@@ -32,9 +33,10 @@ public class HomeFragment extends Fragment {
     String[] scripts;
     int[] chapId={R.array.Chapter1,R.array.Chapter2,R.array.Chapter3,R.array.Chapter4,R.array.Chapter5,R.array.Chapter6,R.array.Chapter7,
             R.array.Chapter8,R.array.Chapter9,R.array.Chapter10,R.array.Chapter11};
-    int chapter=0;
+    int chapter;
     int page=0;
 
+    static RequestQueue requestQueue;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
@@ -44,11 +46,11 @@ public class HomeFragment extends Fragment {
         btnNextScr=(Button)root.findViewById(R.id.btnNextScr);
         txtNPC=(TextView)root.findViewById(R.id.txtNPC);
         txtScript=(TextView)root.findViewById(R.id.txtScript);
-        
-        chapter=GameMainActivity.getChap();
-        page=GameMainActivity.getPage();
-        scripts=root.getResources().getStringArray(chapId[chapter]);
-        showScript(chapter,page);
+
+        if(requestQueue==null)
+        {
+            requestQueue= Volley.newRequestQueue(getActivity().getApplicationContext());
+        }
 
         btnLastScr.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +72,8 @@ public class HomeFragment extends Fragment {
                 {
                     chapter++;
                     page=0;
-
-                    //챕터 저장하고 다른 액티비티로 전달
+                    //getUserID 메소드 사용해야함!!
+                    UpdateDataRequest("tenp",chapter,"12:34:00");
                     switch (chapter-1)
                     {
                         case 0:
@@ -86,6 +88,13 @@ public class HomeFragment extends Fragment {
                 showScript(chapter,page);
             }
         });
+
+        chapter=GameMainActivity.getChap();
+        System.out.println("getChap 결과 "+chapter);
+        page=GameMainActivity.getPage();
+        scripts=root.getResources().getStringArray(chapId[chapter]);
+        showScript(chapter,page);
+
         return root;
     }
     public void showScript(int selChap,int selPage)
@@ -107,6 +116,30 @@ public class HomeFragment extends Fragment {
             txtScript.setText(scripts[selPage]);
         }
     }
+    public void UpdateDataRequest(String userID,int userChap,String userTime)
+    {
+        Response.Listener<String> responseListener=new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    if(success) {
+                        System.out.println("업데이트 성공");
+                    }
+                    else
+                    {
+                        System.out.println("업데이트 실패");
+                    }
 
+                } catch (JSONException e) {
+                    System.out.println("오류");
+                    e.printStackTrace();
+                }
+            }
+        };
+        UpdateUserData updateUserRequest=new UpdateUserData(userID,String.valueOf(userChap),userTime,responseListener);
+        requestQueue.add(updateUserRequest);
+    }
 
 }

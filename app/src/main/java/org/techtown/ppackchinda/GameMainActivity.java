@@ -36,22 +36,21 @@ public class GameMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
         //db 접근
         if(requestQueue==null)
         {
             requestQueue= Volley.newRequestQueue(getApplicationContext());
         }
         //userID=getuserID() 로그인에서 받아오기
-        userID="abc";
-        makeRequest(userID);
-        chapter=0;//db에서 챕터 받아오기
+        userID="tenp";
+        SetDataRequest(userID);
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -91,22 +90,22 @@ public class GameMainActivity extends AppCompatActivity {
         chapter=a;
         page=b;
     }
-    public void makeRequest(String userID)
+    public void SetDataRequest(String userID)
     {
-        System.out.println("에반디");
-        Response.Listener<String> responseListener=new Response.Listener<String>() {
+        Response.Listener<String> responseSetListener=new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
-                    System.out.println("실행 되긴 함");
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
                     if(success) {
                         println("성공");
+                        chapter=0;
                     }
                     else
                     {
                         println("실패");
+                        GetDataRequest(userID);
                     }
 
                 } catch (JSONException e) {
@@ -115,9 +114,37 @@ public class GameMainActivity extends AppCompatActivity {
                 }
             }
         };
-        SetUserData setUserRequest=new SetUserData(userID,"1","00:00:00",responseListener);
+        SetUserData setUserRequest=new SetUserData(userID,"0","00:00:00",responseSetListener);
         requestQueue.add(setUserRequest);
-        System.out.println("개에반디");
+    }
+    public void GetDataRequest(String userID)
+    {
+        Response.Listener<String> responseGetListener=new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success=jsonResponse.getBoolean("success");
+                    if(success){
+                        int chap=jsonResponse.getInt("userChap");
+                        System.out.println("Chap"+chap);
+                        String time=jsonResponse.getString("userTime");
+                        System.out.println("Time"+time);
+                        println(chap+" 띄어쓰기 "+time);
+                        chapter=chap;
+                    }
+                    else
+                    {
+                        System.out.println("실패했음");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        };
+        GetUserData getUserRequest=new GetUserData(userID,responseGetListener);
+        requestQueue.add(getUserRequest);
     }
     public void println(String data)
     {
