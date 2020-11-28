@@ -21,7 +21,7 @@ import java.util.Comparator;
 public class HOFFragment extends ListFragment {
     int priority[] = new int[10];
     String name[] = new String[10];
-    long time[] = new long[10];
+    long time[] = new long[10];//dfsf
     TextView t,p;
     ListView l;
     ArrayList<ListViewItemhof> itemList = new ArrayList<ListViewItemhof>();

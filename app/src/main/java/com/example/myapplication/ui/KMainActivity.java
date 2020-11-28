@@ -21,7 +21,7 @@ import com.example.myapplication.MyService;
 import com.example.myapplication.R;
 import com.google.android.material.navigation.NavigationView;
 
-public class KMainActivity extends AppCompatActivity {
+public class KMainActivity extends AppCompatActivity{
     MediaPlayer m;
 
     private AppBarConfiguration mAppBarConfiguration;

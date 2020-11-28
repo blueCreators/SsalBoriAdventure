@@ -37,24 +37,24 @@ public class  Setting extends AppCompatActivity {
             }
         });
 
-        s = (SeekBar)findViewById(R.id.backSoundSeekBar);
-        s.setThumbOffset(50);
-        s.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                m.setVolume(s.getProgress(),s.getProgress());
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-                m.setVolume(s.getProgress(),s.getProgress());
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                m.setVolume(s.getProgress(),s.getProgress());
-            }
-        });
+//        s = (SeekBar)findViewById(R.id.backSoundSeekBar);
+//        s.setThumbOffset(50);
+//        s.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+//            @Override
+//            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+//                m.setVolume(s.getProgress(),s.getProgress());
+//            }
+//
+//            @Override
+//            public void onStartTrackingTouch(SeekBar seekBar) {
+//                m.setVolume(s.getProgress(),s.getProgress());
+//            }
+//
+//            @Override
+//            public void onStopTrackingTouch(SeekBar seekBar) {
+//                m.setVolume(s.getProgress(),s.getProgress());
+//            }
+//        });
 
     }
 

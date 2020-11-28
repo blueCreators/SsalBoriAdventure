@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,11 +19,14 @@ import com.example.myapplication.R;
 
 import java.util.ArrayList;
 
-public class ItemFragment extends ListFragment {
+public class ItemFragment extends ListFragment  {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ListViewAdapter adapter = new ListViewAdapter();
+
+        ListView listview;
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_item, container, false);
+        ListViewAdapter adapter = new ListViewAdapter(getContext(),R.layout.fragment_item);
         setListAdapter(adapter);
         // 첫 번째 아이템 추가.
         //if() 사용자데이터
@@ -33,10 +37,13 @@ public class ItemFragment extends ListFragment {
                 "쌀 (이과도서관 마스코트)", "본관 건물에서 구출한 이과 도서관의 마스코트인 쌀이다. " +
                         "보통 운이 좋으면 이과 도서관 앞에서 볼 수 있다." +
                         "언제 만날지 모르니 츄르를 들고다니면 좋을 것 같다.") ;
-        return super.onCreateView(inflater,container,savedInstanceState);
+
+
+
+        return rootView;
     }
 
-class ListViewItem{
+    static class ListViewItem{
     private Drawable iconDrawable ;
     private String titleStr ;
     private String descStr ;
@@ -61,14 +68,21 @@ class ListViewItem{
         return this.descStr ;
     }
 }
-    public class ListViewAdapter extends BaseAdapter {
+
+
+
+    public static class ListViewAdapter extends ArrayAdapter  {
         // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
         private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
 
-        // ListViewAdapter의 생성자
-        public ListViewAdapter() {
 
+        // ListViewBtnAdapter 생성자. 마지막에 ListBtnClickListener 추가.
+        ListViewAdapter(Context context, int resource) {
+            super(context, resource) ;
+
+            // resource id 값 복사. (super로 전달된 resource를 참조할 방법이 없음.)
         }
+
 
         // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
         @Override
@@ -101,8 +115,11 @@ class ListViewItem{
             titleTextView.setText(listViewItem.getTitle());
             descTextView.setText(listViewItem.getDesc());
 
+
             return convertView;
         }
+
+
 
         // 지정한 위치(position)에 있는 데이터와 관계된 아이템(row)의 ID를 리턴. : 필수 구현
         @Override
