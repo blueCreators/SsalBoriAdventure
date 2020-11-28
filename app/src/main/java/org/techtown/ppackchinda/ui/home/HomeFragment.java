@@ -82,6 +82,20 @@ public class HomeFragment extends Fragment {
                             //미니게임
                     }
                 }
+                else if(chapter==0&&page==0)
+                {
+                    chapter=GameMainActivity.getChap();
+                    System.out.println("getChap 결과 "+chapter);
+                    if(chapter!=0)
+                    {
+                        page=0;
+                        scripts=root.getResources().getStringArray(chapId[chapter]);
+                    }
+                    else
+                    {
+                        page++;
+                    }
+                }
                 else{
                     page++;
                 }
@@ -89,9 +103,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        chapter=GameMainActivity.getChap();
-        System.out.println("getChap 결과 "+chapter);
-        page=GameMainActivity.getPage();
         scripts=root.getResources().getStringArray(chapId[chapter]);
         showScript(chapter,page);
 
