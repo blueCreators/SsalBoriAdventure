@@ -79,6 +79,7 @@ public class GameMainActivity extends AppCompatActivity {
 
     static public int getChap()
     {
+        System.out.println(chapter+" "+page+"가 페이지 수");
         return chapter;
     }
     static public int getPage()
