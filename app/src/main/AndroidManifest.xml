@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.techtown.ppackchinda" >
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PpackChinDa" >
+        <activity android:name=".LogIn.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GameMainActivity"
+            android:label="@string/title_activity_game_main"
+            android:theme="@style/Theme.PpackChinDa.NoActionBar" >
+        </activity>
+        <activity android:name=".LogIn.RegisterActivity" />
+        //----------------------
+         미니게임
+        //---------------------
+        <activity android:name=".MiniGame.MiniGame_1"/>
+        <activity android:name=".MiniGame.MiniGame_2"/>
+        <activity android:name=".MiniGame.MiniGame_3"/>
+        <activity android:name=".MiniGame.MiniGame_4"/>
+        <activity android:name=".MiniGame.MiniGame_5"/>
+    </application>
+
+</manifest>
