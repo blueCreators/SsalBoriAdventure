@@ -72,6 +72,7 @@ public class HomeFragment extends Fragment {
                 {
                     chapter++;
                     page=0;
+                    GameMainActivity.setChapPage(chapter, page);
                     //getUserID 메소드 사용해야함!!
                     UpdateDataRequest("tenp",chapter,"12:34:00");
                     switch (chapter-1)
@@ -102,7 +103,8 @@ public class HomeFragment extends Fragment {
                 showScript(chapter,page);
             }
         });
-
+        chapter=GameMainActivity.getChap();
+        page=GameMainActivity.getPage();
         scripts=root.getResources().getStringArray(chapId[chapter]);
         showScript(chapter,page);
 
@@ -110,11 +112,10 @@ public class HomeFragment extends Fragment {
     }
     public void showScript(int selChap,int selPage)
     {
-        GameMainActivity.setChapPage(selChap,page);
-        if(selChap==chapter)
+        GameMainActivity.setChapPage(selChap, selPage);
+        if(!scripts.equals(chapId[chapter]))
         {
             scripts=getResources().getStringArray(chapId[selChap]);
-            chapter=selChap;
         }
         if(scripts[selPage].contains(":"))
         {
