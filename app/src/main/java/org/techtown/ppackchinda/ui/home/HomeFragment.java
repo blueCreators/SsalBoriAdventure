@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment {
                     System.out.println("Chapter: "+(chapter-1));
                     switch (chapter-1)
                     {
-                        case 1:
+                        case 0:
                             //위치 인식
                         case 2:
                             //미니게임
