@@ -1,5 +1,6 @@
 package org.techtown.ppackchinda;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -20,7 +21,6 @@ import androidx.appcompat.widget.Toolbar;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.techtown.ppackchinda.LogIn.GetUserData;
-import org.techtown.ppackchinda.LogIn.SetUserData;
 
 public class GameMainActivity extends AppCompatActivity {
 
@@ -29,17 +29,17 @@ public class GameMainActivity extends AppCompatActivity {
     static int page=0;
 
     static RequestQueue requestQueue;
-    String userID;
+    static String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent=getIntent();
+        userID=intent.getExtras().getString("userID");
         //db 접근
         if(requestQueue==null)
         {
             requestQueue= Volley.newRequestQueue(getApplicationContext());
         }
-        //userID=getuserID() 로그인에서 받아오기
-        userID="tenp";
         SetDataRequest(userID);
 
         super.onCreate(savedInstanceState);
@@ -148,5 +148,9 @@ public class GameMainActivity extends AppCompatActivity {
     {
         Toast.makeText(this,"유저 데이터 설정 결과 : "+data,Toast.LENGTH_SHORT).show();
         Log.d("유저 데이터 설정 결과 : ",data);
+    }
+    static public String getUserID()
+    {
+        return userID;
     }
 }

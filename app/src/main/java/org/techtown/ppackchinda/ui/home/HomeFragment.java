@@ -30,7 +30,7 @@ public class HomeFragment extends Fragment {
             R.array.Chapter8,R.array.Chapter9,R.array.Chapter10,R.array.Chapter11};
     int chapter;
     int page=0;
-
+    String userID=GameMainActivity.getUserID();
     static RequestQueue requestQueue;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -68,8 +68,7 @@ public class HomeFragment extends Fragment {
                     chapter++;
                     page=0;
                     GameMainActivity.setChapPage(chapter, page);
-                    //getUserID 메소드 사용해야함!!
-                    UpdateDataRequest("tenp",chapter,"12:34:00");
+                    UpdateDataRequest(userID,chapter,"12:34:00");
                     System.out.println("Chapter: "+(chapter-1));
                     switch (chapter-1)
                     {

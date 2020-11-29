@@ -33,5 +33,4 @@
         <activity android:name=".MiniGame.MiniGame_4"/>
         <activity android:name=".MiniGame.MiniGame_5"/>
     </application>
-
 </manifest>
