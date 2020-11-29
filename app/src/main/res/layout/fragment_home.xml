@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yu">
+
+    <Button
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txtNPC"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="400dp"
+        android:text="미니게임 시작!"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/txtNPC"
+        android:background="#fff5cc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textSize="20dp"
+        android:text=""
+        android:layout_above="@id/layoutScript"/>
+    <FrameLayout
+        android:id="@+id/layoutScript"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        >
+        <TextView
+            android:id="@+id/txtScript"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="context"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#fff5cc"/>
+
+        <Button
+            android:id="@+id/btnLastScr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:text="이전"
+            android:layout_margin="5dp"
+            />
+        <Button
+            android:id="@+id/btnNextScr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="5dp"
+            android:text="다음" />
+    </FrameLayout>
+</RelativeLayout>
