@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="320dp"
+    android:layout_height="170dp">
+
+    <TextView
+        android:id="@+id/atdTitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Setting" />
+
+    <TextView
+        android:id="@+id/soundSetting"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="7dp"
+        android:gravity="left"
+        android:text="Game Sound"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/backgroundsoundText"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="7dp"
+        android:gravity="center"
+        android:text="background sound"
+        android:textSize="13dp" />
+
+    <SeekBar
+        android:id="@+id/backSoundSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:max="100"></SeekBar>
+
+    <TextView
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blueCreators"
+        android:gravity="center"
+        android:text="확인"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
