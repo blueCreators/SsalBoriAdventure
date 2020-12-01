@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">SsalBoriAdventure</string>
+    <string name="title_activity_game_main">GameMainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="welcome">Welcome</string>
+    <string name="password">Password</string>
+    <string name="확인">확인</string>
+    <string name="todo">TODO</string>
+    <string name="e_mail">e-mail</string>
+
+    <string name="menu_home">home</string>
+    <string name="menu_item">아이템창</string>
+    <string name="menu_initialization">초기화</string>
+    <string name="menu_hof">명예의 전당</string>
+    <string name="menu_option">설정</string>
+    <string name="menu_script">스크립트 다시보기</string>
+
+    <string name="temp">Chapter1</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
